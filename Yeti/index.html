@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>YetiSports2</title>
+
+    <style>
+* { padding: 0; margin: 0; }
+html {
+    overflow:  hidden;
+}
+    canvas { background: #eee; display: block; margin: 0 auto; }
+    .button{
+        width: 200px;
+        height: 50px;
+        background: linear-gradient(180deg, #33a9d8 0%, #226eb6 100%);
+        box-shadow: 0px 4px 3px #0f365a;
+        border: none;
+        border-radius: 5px 5px 10px 10px;
+        padding: 24px 42px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .all{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .start{
+        padding: 20px;
+    }
+    .records{
+        padding: 20px;
+    }
+    #canvas{
+        display: flex;
+        margin: 0 auto;
+        height: 600px;
+    }
+    #score, #table{
+        display: flex;
+    }
+    .rules{
+        display: flex;
+        padding: 10px;
+        font-size: 24px;
+    }
+    @media (max-width: 500px){
+    .canva {
+        width: calc(100% - 100px);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="canva">
+    <canvas id='canvas'></canvas>
+</div>
+<div class="score">
+    <h1 id ="score">Score</h1>
+    <h2 id = "table"></h2>
+</div>
+<div class="all">
+    <div class="rules">
+        <p id = 'rules'>УПРАВЛЕНИЕ:<br>
+            Наведение: мышкой<br>
+            Стрельба: любой клавишей или клик<br>
+            Игра начинается через 3 секунды<br> после нажатия на кнопку START!<br>
+            Чтобы перезапустить попытку,<br> нажмите RESTART.
+        </p>
+    </div>
+    <div class="start">
+	<button id = 'button1' class="button">Start</button>
+    <button id = "button2" class="button">Restart</button>
+    </div>
+    <div class="records">
+    <button id = 'button3' class="button">Records</button>
+    <button id = 'button4' class="button">Reset record</button>
+	<a href="end.html" class="linkbutton">
+	<button id = 'button5' class="button">End Game</button></a>
+    </div>
+</div>
+
+    <audio autoplay loop controls="">
+        <source src="sound.mp3" type="audio/mpeg">
+    </audio>
+<script src = "js/main.js"></script>
+
+</body>
+</html>
